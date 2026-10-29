@@ -1,0 +1,152 @@
+<script>
+	// Svelte 5 Runes for state management
+	let mobileMenuOpen = $state(false);
+	let activeDropdown = $state(null); // Tracks which dropdown is open ('features', 'resources', 'company')
+
+	// Navigation data structure
+	const menuItems = [
+		{
+			id: 'features',
+			label: 'Features',
+			links: [
+				{ href: '#analytics', label: 'Analytics' },
+				{ href: '#automation', label: 'Automation' },
+				{ href: '#security', label: 'Security' }
+			]
+		},
+		{
+			id: 'resources',
+			label: 'Resources',
+			links: [
+				{ href: '#docs', label: 'Documentation' },
+				{ href: '#blog', label: 'Blog' },
+				{ href: '#tutorials', label: 'Tutorials' }
+			]
+		},
+		{
+			id: 'company',
+			label: 'Company',
+			links: [
+				{ href: '#about', label: 'About Us' },
+				{ href: '#careers', label: 'Careers' },
+				{ href: '#contact', label: 'Contact' }
+			]
+		}
+	];
+
+	function toggleMobileMenu() {
+		mobileMenuOpen = !mobileMenuOpen;
+		activeDropdown = null; // Reset dropdowns when toggling mobile menu
+	}
+
+	function toggleDropdown(id) {
+		if (activeDropdown === id) {
+			activeDropdown = null;
+		} else {
+			activeDropdown = id;
+		}
+	}
+</script>
+
+<nav class="bg-gray-900 text-gray-100 border-b border-gray-800 relative z-50">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex items-center justify-between h-16">
+			
+			<!-- Left Side: Avatar and Heading -->
+			<div class="flex items-center space-x-3">
+				<img 
+					class="h-9 w-9 rounded-full object-cover border border-gray-700" 
+					src="https://unsplash.com" 
+					alt="User avatar"
+				/>
+				<span class="font-bold text-xl tracking-tight text-white">Dashboard</span>
+			</div>
+
+			<!-- Desktop Navigation (3 Dropdowns) -->
+			<div class="hidden md:flex items-center space-x-4">
+				{#each menuItems as item}
+					<div class="relative">
+						<button
+							onclick={() => toggleDropdown(item.id)}
+							class="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-800 transition-colors focus:outline-none"
+						>
+							<span>{item.label}</span>
+							<svg class="w-4 h-4 transform transition-transform duration-200 {activeDropdown === item.id ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</button>
+
+						<!-- Desktop Dropdown Menu -->
+						{#if activeDropdown === item.id}
+							<div class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 py-1 border border-gray-700">
+								{#each item.links as link}
+									<a
+										href={link.href}
+										class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+									>
+										{link.label}
+									</a>
+								{/each}
+							</div>
+						{/if}
+					</div>
+				{/each}
+			</div>
+
+			<!-- Hamburger Menu Button (Mobile Only) -->
+			<div class="flex md:hidden">
+				<button
+					onclick={toggleMobileMenu}
+					type="button"
+					class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none"
+				>
+					<span class="sr-only">Open main menu</span>
+					{#if mobileMenuOpen}
+						<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+					{:else}
+						<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+						</svg>
+					{/if}
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Mobile Menu Panel -->
+	{#if mobileMenuOpen}
+		<div class="md:hidden bg-gray-900 border-b border-gray-800 absolute w-full left-0 top-16 shadow-xl">
+			<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+				{#each menuItems as item}
+					<div class="space-y-1">
+						<button
+							onclick={() => toggleDropdown(item.id)}
+							class="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 text-left"
+						>
+							<span>{item.label}</span>
+							<svg class="w-4 h-4 transform transition-transform duration-200 {activeDropdown === item.id ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</button>
+						
+						<!-- Mobile Nested Links -->
+						{#if activeDropdown === item.id}
+							<div class="pl-4 space-y-1 bg-gray-950/50 py-2 rounded-md">
+								{#each item.links as link}
+									<a
+										href={link.href}
+										class="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800"
+									>
+										{link.label}
+									</a>
+								{/each}
+							</div>
+						{/if}
+					</div>
+				{/each}
+			</div>
+		</div>
+	{/if}
+</nav>

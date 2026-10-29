@@ -1,0 +1,245 @@
+
+/* This has been added to CSS Protips https://github.com/AllThingsSmitty/css-protip */
+
+/* The type font size in a responsive layout should be able to adjust with each viewport.
+You can calculate the font size based on the viewport height and width using :root */
+:root {
+  font-size: calc(1vw + 1vh + .5vmin);
+}
+
+/* Now you can utilize the root em unit based on the value calculated by :root */
+body {
+
+  font: 1.5rem/1.6 sans-serif;
+
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body, html {
+  /* important */
+  width: 100%;
+  height: 100%;
+  /* Prevent the fixed navbar from overlapping the top page content */
+}
+
+.container {
+  /* 100dvh (Dynamic Viewport Height) prevents mobile browser search bars from cutting off content */
+  min-height: 100dvh;
+
+  /* Fallback for older browsers */
+  min-height: 100vh;
+
+  /* Centers your layout elements vertically and horizontally */
+  display: flex;
+  align-items: center;
+
+  /* Account for your fixed top navbar so content doesn't hide underneath it */
+  /*padding-top: 20px;*/
+}
+
+/*!
+ * Start Bootstrap - Scrolling Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+ .bg {
+   min-height: 100%;
+  /* background: url(images/bg.jpg) no-repeat center center fixed; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+
+/* Ensure the branding container wraps nicely and layout is predictable */
+.navbar-brand {
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+/* Base styles for your titles to remove browser defaults */
+#heading, #subheading {
+font-family: sans-serif; /* Aligns with clean development themes */
+font-weight: 600;
+letter-spacing: -0.025em;
+}
+
+#subheading {
+font-weight: 400;
+letter-spacing: normal;
+}
+
+/* Custom layout sizing for your avatar graphic */
+#avatar {
+border-radius: 50%; /* Keeps the cartoon avatar neatly circular if needed */
+max-width: 45px;
+height: auto;
+transition: transform 0.2s ease-in-out;
+}
+
+/* Subtle interactive lift when hovering over the brand area */
+.navbar-brand:hover #avatar {
+  transform: scale(1.05);
+}
+
+/* Ensure smooth scrolling when clicking page-scroll links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile optimizations: stacks text safely if the screen is exceptionally narrow */
+@media (max-width: 380px) {
+  #heading {
+  font-size: 1.1rem !important;
+  }
+  #subheading {
+  font-size: 0.75rem !important;
+  }
+}
+
+/*
+• No absolute positioning overrides: The layout uses Bootstrap's native CSS variables and flex containers, making it immune to breakages when resizing the viewport.
+• Layout Isolation: Keeps the navbar structure perfectly centered on desktop viewports while automatically handling collapsing behavior on mobile screen breakpoints.
+Are you planning to make the navigation bar change its background color or transparency when a user scrolls down the page, or should it stay solid dark throughout?
+Try without personalization
+*/
+
+
+/* sections */
+
+#section-booking {
+
+  background-image: url("../assets/walk1.png");
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  padding-top: 30rem;  /* 16em to get out of way of dropdown hamburger */
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media(min-width:767px) {
+  #section-booking {
+    padding-top: 150px;
+  }
+}
+
+/*#section-about {
+
+  background-image: url("../assets/bush_1366.jpg");
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  padding-top: 16rem;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}*/
+
+@media(min-width:767px) {
+  #section-about {
+    padding-top: 150px;
+  }
+}
+
+/*#section-contact {
+  height: 50em;
+  background-image: url("../assets/keep_calm_1366.jpg");
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  padding-top: 16rem;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}*/
+
+@media(min-width:767px) {
+  #section-contact {
+    padding-top: 150px;
+  }
+}
+
+.spacer {
+    margin-top: 3px; /* define margin as you see fit */
+}
+
+.panel {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.panel-default > .panel-heading {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+article {
+color: white;
+/*font: 1em/1.6rem sans-serif; */
+  /*font: .7em sans-serif; */
+ font-size: clamp(0.8rem, 2.5vw, 0.8rem)
+
+}
+
+
+/* Create square icons, white logo on  background */
+
+i {
+    color: white;
+    border-radius: 4px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    min-width: 27px;
+    line-height: 27px;
+    text-align: center;
+}
+
+.social-bar a {
+    margin-right: 5px;
+    padding: 5px; /* Increase hit rectangle for touch devices */
+}
+
+.social-bar a:first-child {
+    padding-left: 0;
+}
+
+.social-bar a span {
+    margin-left: 5px;
+}
+
+/* Don't underline icon etc. */
+.social-bar a:hover {
+    text-decoration: none;
+}
+
+/* .social-bar a:hover span {
+    text-decoration: underline;
+color: #333333; }*/ /* Match icon highlight color */
+
+
+/* Animate mouse hover */
+.social-bar a .i {
+   transition: background 0.5s;
+}
+
+.social-bar a:hover .i {
+    background: #333333;
+    transition: background 0.5s;
+}
+
+footer {
+color: rgb(0, 99, 195);
+  font: .7em sans-serif;
+}

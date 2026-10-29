@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Webpage of John Eyres</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="developer programmer web software javascript java mobile apps">
+  <meta name="author" content="John Eyres">
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/fontawesome.min.css" integrity="sha384-mj4mLShEAyWi4Bui9LmFkAjPYWof6WrG8DfS8ebHhjm4/MClMqMMHpQzehNk5HeM" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+
+  <!-- my stylesheet -->
+    <link rel="stylesheet" href="./css/mystyle.css">
+
+  </head>
+
+  <body>
+  <!--body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top"-->
+
+    <!-- <div class="container-fluid"> -->
+      <main>
+
+      <header>
+      <!-- Navigation Fixed Top Navbar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+
+    <!-- Brand and Hamburger Button Grouped for Mobile -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img id="avatar" src="./assets/avatar" alt="cartoon avatar of me" class="me-3" style="height: 48px; width: auto;"/>
+      <div>
+        <h2 id="heading" class="fs-5 mb-0 text-white lh-sm">John Eyres</h2>
+        <h4 id="subheading" class="fs-7 mb-0 text-white-50 lh-sm">Independent Developer</h4>
+      </div>
+    </a>
+
+    <!-- Collapsible Hamburger Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links (Pushed to the right using ms-auto) -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active page-scroll" aria-current="page" href="#section-portfolio">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link page-scroll" href="#section-about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link page-scroll" href="#section-contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!--
+Key Changes Implemented
+
+• Removed .navbar-header: This layout class is obsolete. The brand and toggler now flex automatically inside .container-fluid.
+• Fixed Active Link Styles: In Bootstrap 5/6, the .active class must go directly on the .nav-link element (along with aria-current="page"), not on the wrapping <li>.
+• Added Link Classes: Every list item requires .nav-item and every anchor tag requires .nav-link to receive proper typography and spacing.
+• Modernized Brand Layout: Replaced custom absolute positioning (.header-abs) with flex utilities (d-flex align-items-center) to cleanly align your avatar image next to your titles.
+• Updated Text Scaling: Used native responsive font utilities (fs-4 and fs-6) along with margin resets (mb-0) to keep the text neat, scannable, and vertically centered.
+Would you like help with the custom CSS styles or mobile breakpoints to ensure your logo and dual headings scale perfectly on extra small screens?
+-->
+
+
+
+
+    </header>
+
+
+      <!-- background photos from https://unsplash.com/ -->
+
+      <section id="section-portfolio">
+
+        <div class="container min-vh-100 d-flex flex-column align-items-center justify-content-center">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3>
+                  Portfolio
+              </h3>
+            </div>
+            <div class="panel-body">
+
+              <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12">
+                  <!-- div class="panel panel-default">
+                    <div class="panel-body">
+                      <img src="http://placehold.it/300x300" alt="" class="img-responsive center-block" / -->
+
+                </div>
+              </div>
+
+              <!-- div class="panel panel-default">
+                <div class="panel-body" -->
+                  <div class="media-body">
+                    <h4 class="media-heading">portfolio 1 description, lol I really need to get onto these!</h4>
+                      
+                  </div>
+
+              <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12">
+                  <!--div class="panel panel-default">
+                    <div class="panel-body">
+                      <img src="http://placehold.it/300x300" alt="" class="img-responsive center-block" / -->
+
+                </div>
+              </div>
+
+              <!--div class="panel panel-default">
+                <div class="panel-body" -->
+                  <div class="media-body">
+                    <h4 class="media-heading">portfolio 2 description</h4>
+                      
+                  </div>
+
+              <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12">
+                  <!--div class="panel panel-default">
+                    <div class="panel-body">
+                      <img src="http://placehold.it/300x300" alt="" class="img-responsive center-block" / -->
+
+                </div>
+              </div>
+
+              <!-- div class="panel panel-default">
+                <div class="panel-body" -->
+                  <div class="media-body">
+                    <h4 class="media-heading">portfolio 3 description</h4>
+                     
+                  </div>
+              
+            </div>
+          </div>
+        </div> <!-- end of mainContainer for section-1-->
+
+          <div class="row spacer">
+          <div class="span4">...</div>
+          </div>
+
+      </section>
+
+      <section id="section-about">
+
+        <div class="container">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3>About Me...</h3>
+            </div>
+            <div class="panel-body">
+
+                  <div class="media-body">
+                    
+                    <br>
+                    <article class="text-left">
+                      Hi, I’m John Eyres.
+                      I'm working through a few projects with an aim to do great IT work in Palmerston North.
+                      <br>
+                      I also walk dogs!
+                      <br>
+                      <a href="https://mre.co.nz">see my dog walking service, mre.co.nz</a>
+                      <br>
+                      Being in the New Zealand bush and working on computers are big things in my life.
+                      Previously I was into economics (BBS Fin Econ, Massey) and teaching (Dip Teaching, Wellington).
+                      At the moment, I'm really into FreeCodeCamp, exercism, codewars, linux, HomeAssistant and docker. You can visit a tribute page
+                      to my hero Richard Stallman, <a href="rms.html">here</a>.
+
+                      <br>
+                      <br>
+
+                      Palmy has a good Linux User Group and Software Development Group (co-founded by me).
+                      Um, what else? I’m an Open Source aficionado, jogger, family guy, serial IT meetup starter,
+                      extreme coffee drinker.
+
+                      I often think about  C, C++, Javascript (ECMAscript 6), html5, css, python, typescript and go.
+                    </article>
+                  </div>
+
+                <div class="row">
+                  <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12">
+                  <!-- div class="panel panel-default" -->
+                    <!--div class="panel-heading"></div -->
+                    <div class="panel-body">
+                    <img src="./assets/me.jpg" alt="picture of me (John Eyres)" style="max-width: 200px; height: auto;" />
+                    </div>
+
+                  </div>
+                </div>
+           
+            </div>
+          </div>
+        </div>
+
+
+      </section>
+
+      <section id="section-contact">
+
+        <div class="container min-vh-100 d-flex flex-column align-items-center justify-content-center">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3>
+                  Contact Me
+              </h3>
+            </div>
+            <div class="panel-body">
+                <div class="media-body">
+
+
+
+                      <!--div class="min-vh-100 d-flex flex-column align-items-center justify-content-center" -->
+
+                        <div class="social-bar">
+                          <span>Phone: 027 5419391</span>
+                          <br>
+                          <a href="https://nz.linkedin.com/in/computerjohney">
+                              <class="fa fa-linkedin">
+                              <span>Linked In</span>
+                          </a>
+                          <a href="https://www.facebook.com/computerjohney">
+                              <class="fa fa-facebook">
+                              <span>Facebook</span>
+                          </a>
+                        </div>
+
+
+
+                      </div>
+
+                </div>
+              </div>
+
+            </div>
+
+
+
+      </section>
+
+    <footer>&copy;&nbsp;John Eyres and Bootstrap - background photos from https://unsplash.com/</footer>
+
+    </main>
+
+    <!-- </div> -->  <!-- end of container-fluid -->
+
+    <!-- jQuery -->
+    <!-- <script src="js/jquery.js"></script> -->
+    <!-- Latest compiled and minified JavaScript -->
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- Latest compiled and minified JavaScript -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Scrolling Nav JavaScript -->
+  <!-- Place this just before your closing </body> tag -->
+
+
+
+  </body>
+</html>
