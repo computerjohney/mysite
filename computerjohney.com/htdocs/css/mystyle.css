@@ -174,13 +174,13 @@ Try without personalization
     margin-top: 3px; /* define margin as you see fit */
 }
 
-.panel {
+.card {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   border-color: rgba(0, 0, 0, 0.3);
 }
 
-.panel-default > .panel-heading {
+.card-header {
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
   border-color: rgba(0, 0, 0, 0.4);
